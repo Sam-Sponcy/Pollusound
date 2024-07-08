@@ -20,8 +20,11 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 - birdnet_to_mqtt.py : Ce fichier permet de vérifier les logs du fichier '/var/log/syslog' afin de récupérer les données des oiseaux détectés par BirdNet. Ce code est une version modifiée de celui disponible sur (git: deepcoder / birdnet_to_mqtt.py). (https://gist.github.com/deepcoder/c309087c456fc733435b47d83f4113ff#file-birdnet_to_mqtt-py)
 
-- English Version
-Goal of the Pollusound Project
+
+
+EN
+
+-Goal of the Pollusound Project
 The goal of the Pollusound project is to analyze sounds in the city of Brussels. For this, we will use an Orange LTE-M RAPID dev Kit.
 
 - BirdNET-Analyzer
