@@ -24,7 +24,7 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 EN
 
--Goal of the Pollusound Project
+- Goal of the Pollusound Project
 The goal of the Pollusound project is to analyze sounds in the city of Brussels. For this, we will use an Orange LTE-M RAPID dev Kit.
 
 - BirdNET-Analyzer
