@@ -1,4 +1,3 @@
-# domain_to_ip.py
 import socket
 
 def domaine_vers_ip(nom_domaine):

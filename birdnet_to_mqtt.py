@@ -1,19 +1,12 @@
-#! /usr/bin/env python3
-# birdnet_to_terminal.py
-#
-# 202306171542
-#
-# monitor the records in the syslog file for info from the birdnet system on birds that it detects
-# print this data to the terminal
-#
+# Inspired by git: deepcoder / birdnet_to_mqtt.py
+#if you want to add cart home assistant, you can use this link :
+#https://gist.github.com/deepcoder/c309087c456fc733435b47d83f4113ff#file-birdnet_to_mqtt-py
 
 import time
 import re
 import dateparser    
 import datetime
 import json
-import serial
-
 
 # this generator function monitors the requested file handle for new lines added at its end
 # the newly added line is returned by the function
@@ -93,8 +86,6 @@ def bird_json():
                 # convert to json string
                 json_bird = json.dumps(bird)
 
-                print(json_bird)
-
         # bird found above confidence level found, process it
         if re_high_found.search(row):
             # this slacker regular expression work, extracts the data about the bird found from the log line
@@ -125,6 +116,4 @@ def bird_json():
 
             # convert to json string
             json_bird = json.dumps(bird)
-
-            print(json_bird)
             return json_bird

@@ -1,52 +1,55 @@
-import serial              
-import time                
-import json                
-import re                  # Module pour les expressions régulières
-import dateparser          # Module pour l'analyse des dates
-import datetime            # Module pour la manipulation des dates et heures
-from domain_to_ip import domaine_vers_ip  # Fonction pour convertir un nom de domaine en adresse IP
-from command_start import SendStartCommand  # Fonction pour envoyer les commandes de configuration au module SARA R410M
-from send_mqtt import SendMqtt  # Fonction pour envoyer des messages MQTT
-from birdnet_to_mqtt import bird_json  # Fonction pour obtenir des données JSON de BirdNET
+import time                # Module for time management
+import json                # Module for JSON processing
+import re                  # Module for regular expressions
+import dateparser          # Module for date parsing
+import datetime            # Module for date and time manipulation
+import serial              # Module for serial communication
+from domain_to_ip import domaine_vers_ip  # Function to convert domain name to IP address
+from command_start import SendStartCommand  # Function to send configuration commands to SARA R410M module
+from send_mqtt import SendMqtt  # Function to send MQTT messages
+from birdnet_to_mqtt import bird_json  # Function to fetch BirdNET JSON data
 
 def DnsToIP(nom_domaine):
-  
+    """
+    Function to convert a domain name to an IP address.
+    Uses the domaine_vers_ip function from the domain_to_ip module.
+    """
     adresse_ip = domaine_vers_ip(nom_domaine)
     if adresse_ip:
-        print(f"L'adresse IP de {nom_domaine} est : {adresse_ip}")
+        print(f"The IP address of {nom_domaine} is: {adresse_ip}")
     else:
-        print(f"Impossible de résoudre l'adresse IP pour {nom_domaine}")
+        print(f"Unable to resolve IP address for {nom_domaine}")
     return adresse_ip
 
 if __name__ == "__main__":
     try:
-        port = '/dev/ttyACM0'   # Définition du port série
+        port = '/dev/ttyACM0'   # Serial port definition
         nom_domaine = "polusound.ddns.net" 
         ip = DnsToIP(nom_domaine)  
-        # Si l'on souhaite utiliser une adresse IP statique plutôt que de résoudre le nom de domaine,
-        # décommentez la ligne suivante et commentez la ligne ip = DnsToIP(nom_domaine) ci-dessus.
+        # If you want to use a static IP address instead of resolving the domain name,
+        # uncomment the following line and comment out the ip = DnsToIP(nom_domaine) line above.
         # ip = "0.0.0.0"
 
-        port_ip = "1883"  # Port MQTT
+        port_ip = "1883"  # MQTT port
 
-        ser = serial.Serial(port, 115200, timeout=1)  # Initialisation de la communication série
+        ser = serial.Serial(port, 115200, timeout=1)  # Serial communication initialization
         
-        # Envoi de la configuration du module SARA R410M
+        # Sending configuration to SARA R410M module
         SendStartCommand(ser, ip, port_ip)
         
-        topic = "birdnet/status"  # Topic MQTT pour le statut
-        message = "ready"  # Message à envoyer
-        SendMqtt(ser, topic, message)  # Envoi du message MQTT
+        topic = "birdnet/status"  # MQTT topic for status
+        message = "ready"  # Message to send
+        SendMqtt(ser, topic, message)  # Sending MQTT message
         
-        # Envoi des données de détection BirdNET
-        topic = "birdnet/detection"  # Topic MQTT pour les détections
+        # Sending BirdNET detection data
+        topic = "birdnet/detection"  # MQTT topic for detections
         while True:
-            file_bird = bird_json()  # Obtention des données de détection au format JSON
-            SendMqtt(ser, topic, file_bird)  # Envoi des données MQTT
-            print(f"Envoi de la détection : {file_bird}")  # Affichage pour confirmation
+            file_bird = bird_json()  # Getting detection data in JSON format
+            SendMqtt(ser, topic, file_bird)  # Sending MQTT data
+            print(f"Sending detection: {file_bird}")  # Display for confirmation
             
     except Exception as e:
-        print(f"Erreur générale: {e}")  # Affichage des erreurs
+        print(f"General error: {e}")  # Displaying errors
         
     finally:
-        ser.close()  # Fermeture de la connexion série à la fin du programme
+        ser.close()  # Closing serial connection at the end of the program
