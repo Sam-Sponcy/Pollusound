@@ -1,0 +1,24 @@
+add service : 
+sudo nano /etc/systemd/system/my_service.service
+
+-----
+[Unit]
+Description=Mon Script mqtt
+After=network.target
+
+[Service]
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/python3 /home/pi/BirdNET-Pi/main.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+--------
+
+reload file : 
+
+sudo systemctl daemon-reload
+sudo systemctl enable my_service.service
+sudo systemctl start my_service.service
+sudo systemctl status my_service.service
