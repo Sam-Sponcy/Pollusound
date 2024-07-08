@@ -18,6 +18,8 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 - main.py : Ce fichier permet de paramétrer le module SARA-R410M afin d'assurer la connexion au réseau cellulaire, au serveur MQTT et d'envoyer les détections de sons.
 
+- service.txt : mise en place d'un service au demarrage
+
 - birdnet_to_mqtt.py : Ce fichier permet de vérifier les logs du fichier '/var/log/syslog' afin de récupérer les données des oiseaux détectés par BirdNet. Ce code est une version modifiée de celui disponible sur (git: deepcoder / birdnet_to_mqtt.py). (https://gist.github.com/deepcoder/c309087c456fc733435b47d83f4113ff#file-birdnet_to_mqtt-py)
 
 
