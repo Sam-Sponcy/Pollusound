@@ -1,7 +1,6 @@
-FR
-
-- But du projet Pollusound
-Le but du projet Pollusound est d'analyser les sons dans la ville de Bruxelles. Pour cela, nous utiliserons une carte LTE-M RAPID dev Kit Orange.
+FR  - But du projet Pollusound
+  
+Le but est d'analyser les sons dans la ville de Bruxelles. Pour cela, nous utiliserons une carte LTE-M RAPID dev Kit Orange.
 
 - BirdNET-Analyzer
 Nous utiliserons l'IA de BirdNet afin de proposer une solution simple et abordable d'une IA de type CNN qui utilise le traitement d'image pour reconnaître un son.
@@ -24,9 +23,8 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 
 
-EN
-
-- Goal of the Pollusound Project
+EN  - Goal of the Pollusound Project
+  
 The goal of the Pollusound project is to analyze sounds in the city of Brussels. For this, we will use an Orange LTE-M RAPID dev Kit.
 
 - BirdNET-Analyzer
