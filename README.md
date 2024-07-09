@@ -1,6 +1,4 @@
-FR
-
-- But du projet Pollusound
+FR  - But du projet Pollusound
   
 Le but est d'analyser les sons dans la ville de Bruxelles. Pour cela, nous utiliserons une carte LTE-M RAPID dev Kit Orange.
 
@@ -25,9 +23,7 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 
 
-EN
-
-- Goal of the Pollusound Project
+EN  - Goal of the Pollusound Project
   
 The goal of the Pollusound project is to analyze sounds in the city of Brussels. For this, we will use an Orange LTE-M RAPID dev Kit.
 
