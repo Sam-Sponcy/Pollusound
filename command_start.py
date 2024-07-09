@@ -14,7 +14,7 @@ def SendStartCommand(ser, ip, port_ip):
         print("AT command executed successfully!")
 
     # Define the AT command you want to send
-    command_PDP = "AT+CGDCONT=1,'IP','test.5g.m2mmobi.be'\r\n"
+    command_PDP = "AT+CGDCONT=1,'IP','PDP link'\r\n"   # Define the PDP link name
 
     # Send the AT command
     print(f"Sending command: {command_PDP.strip()}")
@@ -57,7 +57,7 @@ def SendStartCommand(ser, ip, port_ip):
                     f"AT+UMQTT=1,{port_ip}\r\n",
                     'AT+UMQTT=2,"homeass"\r\n',
                     f'AT+UMQTT=3,"{ip}",{port_ip}\r\n',
-                    'AT+UMQTT=4,"MQTT","210622"\r\n'
+                    'AT+UMQTT=4,"Name","password"\r\n'  # Replace Name and password with your MQTT credentials
                     ]
 
     for command in command_mqtt:

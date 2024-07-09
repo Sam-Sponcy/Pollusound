@@ -23,8 +23,8 @@ def DnsToIP(nom_domaine):
 
 if __name__ == "__main__":
     try:
-        port = '/dev/ttyACM0'   # Serial port definition
-        nom_domaine = "polusound.ddns.net" 
+        port = '/dev/ttyACM0'   # Serial port of raspbeery definition
+        nom_domaine = "myserver.com" 
         ip = DnsToIP(nom_domaine)  
         # If you want to use a static IP address instead of resolving the domain name,
         # uncomment the following line and comment out the ip = DnsToIP(nom_domaine) line above.
