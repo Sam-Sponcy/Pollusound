@@ -4,6 +4,7 @@ Le but est d'analyser les sons dans la ville de Bruxelles. Pour cela, nous utili
 
 - BirdNET-Analyzer
 Nous utiliserons l'IA de BirdNet afin de proposer une solution simple et abordable d'une IA de type CNN qui utilise le traitement d'image pour reconnaître un son.
+https://github.com/mcguirepr89/BirdNET-Pi
 
 Cette IA fonctionne sur un Raspberry Pi 4B. Celle-ci est fortement recommandée dans le dépôt (https://github.com/mcguirepr89/BirdNET-Pi).
 
@@ -23,6 +24,8 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 
 ![IMG_9250](https://github.com/Sam-Sponcy/Pollusound/assets/93118296/6469fca2-1e9e-4780-93bb-df54abe5041c)
 lien boite : https://www.thingiverse.com/thing:3338826
+
+Micro suggéré : https://github.com/mcguirepr89/BirdNET-Pi/discussions/39
 
 EN  - Goal of the Pollusound Project
   
