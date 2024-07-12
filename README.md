@@ -22,6 +22,7 @@ Nous utiliserons la carte "SODAQ SARA AFF REV 3" avec le code "nbIOT_serial_pass
 - birdnet_to_mqtt.py : Ce fichier permet de vérifier les logs du fichier '/var/log/syslog' afin de récupérer les données des oiseaux détectés par BirdNet. Ce code est une version modifiée de celui disponible sur (git: deepcoder / birdnet_to_mqtt.py). (https://gist.github.com/deepcoder/c309087c456fc733435b47d83f4113ff#file-birdnet_to_mqtt-py)
 
 ![IMG_9250](https://github.com/Sam-Sponcy/Pollusound/assets/93118296/6469fca2-1e9e-4780-93bb-df54abe5041c)
+lien boite : https://www.thingiverse.com/thing:3338826
 
 EN  - Goal of the Pollusound Project
   
